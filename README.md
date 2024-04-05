@@ -115,9 +115,9 @@ En las otras instancias, abrimos una terminal y ejecutamos el siguiente comando 
 A continuación se presenta un video demostrando el funcionamiento de la aplicación, haciendo uso de tres instancias de EC2 en AWS.
 En este caso, lo único que cambiamos es la URL, ya que ya no sería localhost, sino el DNS de la IPv4 pública de nuestra VM.
 Cabe recordar que se deben agregar las reglas de entrada a la instancia para poder ejecutar la aplicación, se deben abrir los puertos 4567 y 8080.
+En el video podemos ver distintas pruebas de integración, explicadas en el video.
 
-[![Video Prototipo](multimedia/)](https://youtu.be/AINZ3AHpHRU)
-
+[![Video Prototipo]()](https://www.youtube.com/watch?v=ZMo7F9jQDFQ)
 
 ## Pruebas
 
