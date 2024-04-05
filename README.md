@@ -37,6 +37,25 @@ MATH_SERVICE_URLS ponemos la dirección "http://localhost:8080").
 
 Una vez que tengamos nuestras instancias de EC2 en AWS, debemos conectarnos a ellas a través de SSH. Para ello, debemos tener la clave .pem que se nos proporcionó al crear la instancia.
 
+En caso de que no tengamos instalados los prerequisitos, debemos instalarlos en cada una de las instancias. Para ello, ejecutamos los siguientes comandos:
+
+Para instalar git:
+```bash
+sudo yum install -y git
+```
+
+Para instalar java 17:
+```bash
+sudo yum install -y java-17-amazon-corretto-devel
+```
+
+Para instalar maven:
+```bash
+sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install -y apache-maven
+```
+
 Usando nuestro editor de código favorito, abrimos el proyecto y modificamos el archivo edu.arep.loadBalancer.Invoker.java,
 y cambiamos las direcciones IP de las máquinas virtuales de AWS por las direcciones IP o el DNS público IPv4 de nuestras instancias de EC2
 
@@ -85,12 +104,12 @@ Y en la consola del servicio proxy, podemos ver la comprobación de que se está
 Una vez hemos compilado el proyecto en cada instancia, abrimos una terminal (de una vm, en este caso la del servicio proxy) y ejecutamos el siguiente comando:
 
 ```bash
-  java -cp "target/classes/;target/dependency/*" edu.arep.loadBalancer.ProxyService
+  java -cp "target/classes/:target/dependency/*" edu.arep.loadBalancer.ProxyService
 ```
 
 En las otras instancias, abrimos una terminal y ejecutamos el siguiente comando (estas servirán como servicios de ordenamiento):
 ```bash
-  java -cp "target/classes/;target/dependency/*" edu.arep.search.MathService
+  java -cp "target/classes/:target/dependency/*" edu.arep.search.MathService
 ```
 
 A continuación se presenta un video demostrando el funcionamiento de la aplicación, haciendo uso de tres instancias de EC2 en AWS.
