@@ -107,7 +107,7 @@ Las unitarias se pueden ejecutar al correr este comando`mvn test`
 
 ### Pruebas Unitarias
 
-Las pruebas unitarias se centran en verificar el correcto funcionamiento de componentes individuales del código, como métodos o clases, en aislamiento. En este caso, se han realizado pruebas unitarias para los métodos de búsqueda lineal y binaria en el paquete `edu.arep.search`, así como para la rotación de URLs en el paquete `edu.arep.loadBalancer`.
+Las pruebas unitarias se centran en verificar el correcto funcionamiento de componentes individuales del código, como métodos o clases, en aislamiento. En este caso, se han realizado pruebas unitarias para los métodos de búsqueda lineal y binaria en el paquete `edu.arep.search`, así como para la rotación de URL en el paquete `edu.arep.loadBalancer`.
 
 ![image](multimedia/unittets.png)
 

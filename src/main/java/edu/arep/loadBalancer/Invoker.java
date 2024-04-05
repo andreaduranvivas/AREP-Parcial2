@@ -21,9 +21,9 @@ public class Invoker {
     /**
      * A list of URLs representing the endpoints for the mathematical services.
      */
-    static final List<String> MATH_SERVICE_URLS = Arrays.asList("http://localhost:4567", "http://localhost:4567"
-                                                                //"http://ec2-54-167-24-152.compute-1.amazonaws.com:38000",
-                                                                //"http://ec2-3-91-71-35.compute-1.amazonaws.com:38000"
+    static final List<String> MATH_SERVICE_URLS = Arrays.asList(//"http://localhost:4567", "http://localhost:4567"
+                                                                "http://ec2-54-167-24-152.compute-1.amazonaws.com:38000",
+                                                                "http://ec2-3-91-71-35.compute-1.amazonaws.com:38000"
                                                     );
     static int currentMathService = 0;
 
