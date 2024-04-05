@@ -96,7 +96,9 @@ El siguiente es un ejemplo de cómo se vería la aplicación en el navegador.
 
 ![image](multimedia/formulario.png)
 
+
 Y en la consola del servicio proxy, podemos ver la comprobación de que se están realizando las peticiones a los servicios de ordenamiento.
+
 ![image](multimedia/comprobacion.png)
 
 #### Usando VM de EC2 de AWS
