@@ -1,6 +1,7 @@
 package edu.arep.search;
 
 import edu.arep.search.Search;
+import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,7 +12,8 @@ class SearchTest {
         String listString = "1,2,3";
         String value = "2";
         String result = Search.linearSearch(listString, value);
-        assertTrue(result.contains("\"output\": \"1\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(1, jsonResult.getInt("output"));
     }
 
     @Test
@@ -19,7 +21,8 @@ class SearchTest {
         String listString = "1,2,3";
         String value = "4";
         String result = Search.linearSearch(listString, value);
-        assertTrue(result.contains("\"output\": \"-1\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(-1, jsonResult.getInt("output"));
     }
 
     @Test
@@ -27,7 +30,8 @@ class SearchTest {
         String listString = "1,2,3";
         String value = "2";
         String result = Search.binarySearch(listString, value);
-        assertTrue(result.contains("\"output\": \"1\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(1, jsonResult.getInt("output"));
     }
 
     @Test
@@ -35,7 +39,8 @@ class SearchTest {
         String listString = "1,2,3";
         String value = "4";
         String result = Search.binarySearch(listString, value);
-        assertTrue(result.contains("\"output\": \"-1\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(-1, jsonResult.getInt("output"));
     }
 
     @Test
@@ -43,7 +48,8 @@ class SearchTest {
         String listString = "";
         String value = "1";
         String result = Search.linearSearch(listString, value);
-        assertTrue(result.contains("\"output\": \"-1\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(-1, jsonResult.getInt("output"));
     }
 
     @Test
@@ -51,7 +57,8 @@ class SearchTest {
         String listString = "";
         String value = "1";
         String result = Search.binarySearch(listString, value);
-        assertTrue(result.contains("\"output\": \"-1\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(-1, jsonResult.getInt("output"));
     }
 
     @Test
@@ -59,7 +66,8 @@ class SearchTest {
         String listString = "1";
         String value = "1";
         String result = Search.linearSearch(listString, value);
-        assertTrue(result.contains("\"output\": \"0\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(0, jsonResult.getInt("output"));
     }
 
     @Test
@@ -67,7 +75,8 @@ class SearchTest {
         String listString = "1";
         String value = "1";
         String result = Search.binarySearch(listString, value);
-        assertTrue(result.contains("\"output\": \"0\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(0, jsonResult.getInt("output"));
     }
 
     @Test
@@ -75,7 +84,8 @@ class SearchTest {
         String listString = "1,2,3";
         String value = "3";
         String result = Search.linearSearch(listString, value);
-        assertTrue(result.contains("\"output\": \"2\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(2, jsonResult.getInt("output"));
     }
 
     @Test
@@ -83,7 +93,8 @@ class SearchTest {
         String listString = "1,2,3";
         String value = "3";
         String result = Search.binarySearch(listString, value);
-        assertTrue(result.contains("\"output\": \"2\""));
+        JSONObject jsonResult = new JSONObject(result);
+        assertEquals(2, jsonResult.getInt("output"));
     }
 }
 
